@@ -1,0 +1,36 @@
+package windowRelatedOperations;
+
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ChangeThePosition {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://www.facebook.com/");
+		
+		Point defaultPostition = driver.manage().window().getPosition();
+		System.out.println("Your default position is :"+defaultPostition);
+		
+		
+		Point d = new Point(300, 20);
+		
+		driver.manage().window().setPosition(d);
+		Thread.sleep(3000);
+		
+		Point newPosition = driver.manage().window().getPosition();
+		
+		System.out.println("Yor new Position is :"+ newPosition);
+		
+		
+		driver.quit();
+		   
+		
+	
+		
+	}
+
+}

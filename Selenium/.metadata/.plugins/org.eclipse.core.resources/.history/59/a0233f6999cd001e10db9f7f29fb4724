@@ -1,0 +1,16 @@
+package windowRelatedOperations;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class FindingTheDimenssionOfEmptyBrowserWindow {
+
+	public static void main(String[] args) {
+		
+		WebDriver driver = new EdgeDriver();
+		driver.manage().window().getSize();
+		driver.manage().window().getPosition();
+
+	}
+
+}

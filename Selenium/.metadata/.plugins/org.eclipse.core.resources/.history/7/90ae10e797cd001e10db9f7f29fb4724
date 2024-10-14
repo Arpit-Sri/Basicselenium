@@ -1,0 +1,19 @@
+package windowRelatedOperations;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SomeOperationsusindWindowInterface {
+
+	public static void main(String[] args) {
+		
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().window().fullscreen();
+		driver.manage().window().minimize();
+		driver.manage().window().getSize();
+		driver.manage().window().getPosition();
+
+	}
+
+}

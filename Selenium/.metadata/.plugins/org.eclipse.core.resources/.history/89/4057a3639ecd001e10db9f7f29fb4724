@@ -1,0 +1,33 @@
+package windowRelatedOperations;
+
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ChangeTheDimession {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://www.facebook.com/");
+		
+		Dimension byDefaultSize = driver.manage().window().getSize();
+		System.out.println(byDefaultSize);
+		
+		Dimension d = new Dimension(600, 700);
+		
+		driver.manage().window().setSize(d);
+		Thread.sleep(2000);
+		
+		Dimension implementedSize = driver.manage().window().getSize();
+		System.out.println(implementedSize);
+		
+		driver.quit();
+		
+		
+		
+
+	}
+
+}

@@ -1,0 +1,24 @@
+package windowRelatedOperations;
+
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ChangeThePosition {
+
+	public static void main(String[] args) {
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://www.facebook.com/");
+		
+		Thread.sleep(3000);
+		Point d = new Point(45, 50);
+		driver.manage().window().setPosition(d);
+		
+		
+	
+		
+	}
+
+}

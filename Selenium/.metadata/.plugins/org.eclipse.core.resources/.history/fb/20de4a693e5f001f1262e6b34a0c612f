@@ -1,0 +1,46 @@
+package pacto;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ListOfDoc {
+
+	public static void main(String[] args) {
+		
+		
+		ChromeDriver driver=new ChromeDriver();
+		
+		driver.manage().window().maximize(); 
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		driver.get("https://www.practo.com/Thrissur/doctors");
+		
+		//list of doctors 
+		List<WebElement> Doctors = driver.findElements(By.xpath("//div[@class='info-section']"));
+		
+		
+		for( WebElement doctor : Doctors) {
+			
+			List<WebElement> patientStory = driver.findElements(By.xpath(".//span[contains(text(), 'Patient Stories')]"));
+			
+			if(patientStory.isEmpty()) {
+				
+				WebElement docName = doctor.findElement(By.xpath(".//h2"));
+				
+				System.out.println(docName);
+				
+				
+				
+
+			}
+			
+		}
+	
+		driver.quit();
+	}
+
+}
